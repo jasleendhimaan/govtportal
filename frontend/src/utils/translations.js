@@ -29,7 +29,18 @@ export const translations = {
     hoursTarget: "72 Hours",
     assistance: "Need Assistance?",
     helpdesk: "Official Helpdesk",
-    categories: ['Water Supply', 'Electricity', 'Roads', 'Sanitation', 'Public Safety', 'Transport', 'Healthcare', 'Education', 'Environment', 'Other']
+    categories: [
+  'Water Supply',
+  'Electricity',
+  'Roads',
+  'Sanitation',
+  'Public Safety',
+  'Public Transport',
+  'Healthcare',
+  'Education',
+  'Environment',
+  'Other'
+]
   },
   hi: {
     successTitle: "शिकायत दर्ज की गई",
@@ -61,7 +72,7 @@ export const translations = {
     hoursTarget: "72 घंटे",
     assistance: "सहायता चाहिए?",
     helpdesk: "आधिकारिक हेल्पडेस्क",
-    categories: ['जल आपूर्ति', 'बिजली', 'सड़कें', 'स्वच्छता', 'सार्वजनिक सुरक्षा', 'परिवहन', 'स्वास्थ्य सेवा', 'शिक्षा', 'पर्यावरण', 'अन्य']
+    categories: ['जल आपूर्ति', 'बिजली', 'सड़कें', 'स्वच्छता', 'सार्वजनिक सुरक्षा', 'सार्वजनिक परिवहन', 'स्वास्थ्य सेवा', 'शिक्षा', 'पर्यावरण', 'अन्य']
   },
   pa: {
     successTitle: "ਸ਼ਿਕਾਇਤ ਦਰਜ ਕੀਤੀ ਗਈ",
@@ -93,6 +104,6 @@ export const translations = {
     hoursTarget: "72 ਘੰਟੇ",
     assistance: "ਸਹਾਇਤਾ ਚਾਹੀਦੀ ਹੈ?",
     helpdesk: "ਅਧਿਕਾਰਤ ਹੈਲਪਡੈਸਕ",
-    categories: ['ਜਲ ਸਪਲਾਈ', 'ਬਿਜਲੀ', 'ਸੜਕਾਂ', 'ਸਫਾਈ', 'ਜਨਤਕ ਸੁਰੱਖਿਆ', 'ਟ੍ਰਾਂਸਪੋਰਟ', 'ਸਿਹਤ ਸੇਵਾ', 'ਸਿੱਖਿਆ', 'ਵਾਤਾਵਰਣ', 'ਹੋਰ']
+    categories: ['ਜਲ ਸਪਲਾਈ', 'ਬਿਜਲੀ', 'ਸੜਕਾਂ', 'ਸਫਾਈ', 'ਜਨਤਕ ਸੁਰੱਖਿਆ', 'ਪਬਲਿਕ ਟ੍ਰਾਂਸਪੋਰਟ', 'ਸਿਹਤ ਸੇਵਾ', 'ਸਿੱਖਿਆ', 'ਵਾਤਾਵਰਣ', 'ਹੋਰ']
   }
 };

@@ -1,12 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const dotenv = require('dotenv');
 const path = require('path');
-
 require('dotenv').config();
-
-dotenv.config();
 
 const app = express();
 
@@ -22,7 +18,7 @@ const complaintRoutes = require('./routes/complaints');
 app.use('/api/auth', authRoutes);
 app.use('/api/complaints', complaintRoutes);
 
-// MongoDB Connection
+// Env variables
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -31,17 +27,20 @@ if (!MONGO_URI) {
   process.exit(1);
 }
 
-mongoose.connect(MONGO_URI)
-  .then(() => console.log('Connected to MongoDB Atlas (Cloud)'))
-  .catch(err => {
-    console.error('❌ MongoDB Connection Error:', err.message);
-    console.log('--- RECAP: Ensure your IP is whitelisted and password is correct in the .env file ---');
-  });
-
+// Test route
 app.get('/', (req, res) => {
   res.json({ message: 'Citizen Portal API is Live' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// MongoDB connection + server start
+mongoose.connect(MONGO_URI)
+  .then(() => {
+    console.log('✅ Connected to MongoDB Atlas (Cloud)');
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('❌ MongoDB Connection Error:', err.message);
+    console.log('--- RECAP: Check MONGO_URI, Atlas network access, username/password, and cluster hostname ---');
+  });

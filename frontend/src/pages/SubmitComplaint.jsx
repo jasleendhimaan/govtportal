@@ -52,17 +52,20 @@ const SubmitComplaint = () => {
 
   try {
     const token = localStorage.getItem('token');
+    console.log("TOKEN:", token);
 
-    await axios.post(
-      'http://localhost:5000/api/complaints/submit',
-      data,
-      {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer ${token}`
-        }
-      }
-    );
+    const res = await axios.post(
+  'http://localhost:5000/api/complaints/submit',
+  data,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+);
+
+setSuccess(true);
+setTrackingId(res.data.trackingId);
 
     alert('Complaint submitted successfully');
     navigate('/citizen-dashboard');
