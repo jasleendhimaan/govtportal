@@ -28,7 +28,18 @@ const SubmitComplaint = () => {
     image: null
   });
 
-  const categories = translations.en.categories;
+  const categoryOptions = [
+    { value: 'Water', label: 'Water Supply' },
+    { value: 'Electricity', label: 'Electricity' },
+    { value: 'Roads', label: 'Roads' },
+    { value: 'Sanitation', label: 'Sanitation' },
+    { value: 'Police', label: 'Public Safety' },
+    { value: 'Public Transport', label: 'Public Transport' },
+    { value: 'Healthcare', label: 'Healthcare' },
+    { value: 'Other', label: 'Education' },
+    { value: 'Other', label: 'Environment' },
+    { value: 'Other', label: 'Other' }
+  ];
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -412,10 +423,10 @@ const SubmitComplaint = () => {
                       required
                       style={{ paddingLeft: '3.5rem', appearance: 'none' }}
                     >
-                      <option value="">{t.selectCategory}</option>
-                      {categories.map((c, idx) => (
-                        <option key={c} value={c}>
-                          {t.categories[idx]}
+                      <option value="">Select Service Area</option>
+                      {categoryOptions.map((item, index) => (
+                        <option key={`${item.label}-${index}`} value={item.value}>
+                          {item.label}
                         </option>
                       ))}
                     </select>
